@@ -12,6 +12,10 @@
 /* rename member in struct mmc_host in include/linux/mmc/host.h */
 #define max_segs	max_hw_segs
 
+static inline bool pm_runtime_enabled(struct device *dev)
+{
+	return !dev->power.disable_depth;
+}
 
 /* Exponentially weighted moving average (EWMA) */
 
