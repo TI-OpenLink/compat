@@ -203,6 +203,10 @@ static inline struct inode *file_inode(struct file *f)
 	return f->f_path.dentry->d_inode;
 }
 
+#ifndef ETH_P_802_3_MIN
+#define ETH_P_802_3_MIN	0x0600
+#endif
+
 #endif /* (LINUX_VERSION_CODE < KERNEL_VERSION(3,9,0)) */
 
 #endif /* LINUX_3_9_COMPAT_H */
