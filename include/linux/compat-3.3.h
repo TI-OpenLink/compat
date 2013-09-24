@@ -291,7 +291,8 @@ static inline void qdisc_cb_private_validate(const struct sk_buff *skb, int sz)
 extern struct sk_buff *__pskb_copy(struct sk_buff *skb,
 				   int headroom, gfp_t gfp_mask);
 
-static inline void skb_complete_wifi_ack(struct sk_buff *skb, bool acked)
+#define skb_complete_wifi_ack skb_complete_wifi_ack_compat
+static inline void skb_complete_wifi_ack_compat(struct sk_buff *skb, bool acked)
 {
 	WARN_ON(1);
 }
