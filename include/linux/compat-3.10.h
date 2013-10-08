@@ -2,12 +2,12 @@
 #define LINUX_3_10_COMPAT_H
 
 #include <linux/version.h>
+#include <linux/fb.h>
 
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,10,0))
 
 #include <linux/scatterlist.h>
 #include <linux/mm.h>
-#include <linux/fb.h>
 
 #define sg_page_iter_page LINUX_BACKPORT(sg_page_iter_page)
 /**
