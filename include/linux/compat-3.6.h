@@ -106,6 +106,13 @@ static inline void eth_random_addr(u8 *addr)
  *   Signed-off-by: Bryan Wu <bryan.wu@canonical.com>
  */
 #define led_set_brightness(_dev, _switch) led_brightness_set(_dev, _switch)
+static inline void led_trigger_blink_oneshot(void *trigger,
+				      unsigned long *delay_on,
+				      unsigned long *delay_off,
+				      int invert)
+{
+	/* we don't really care about leds right now */
+}
 
 #endif /* (LINUX_VERSION_CODE < KERNEL_VERSION(3,6,0)) */
 
